@@ -1,0 +1,15 @@
+@use "../../styles/abstracts" as *;
+@use "sass:map";
+
+/* HOME PAGE STYLES */
+.container {
+  padding: 1.2rem;
+  .title {
+    font-size: map.get($font-sizes, "xxl");
+    margin-bottom: 1rem;
+  }
+  .productList {
+    display: grid;
+    gap: 1.4rem;
+  }
+}
