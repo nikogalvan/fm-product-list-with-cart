@@ -15,25 +15,24 @@
   .imageContainer {
     position: relative;
     margin-bottom: 1rem;
+    //MOVE THE STYLE OF BuTTON TO HIS MODULE
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 0.5rem;
       position: absolute;
-      top: 50%;
       left: 50%;
-      transform: translate(-50%, 180%);
-      z-index: 2;
+      bottom: 0px;
+      transform: translateX(-50%);
       border: 2px solid $rose-300;
       border-radius: 5rem;
       font-size: map.get($font-sizes, "xs");
       font-weight: map.get($font-weights, "semibold");
       background-color: white;
       padding: 0.6rem 1.4rem;
-      //height: 50px;
-      width: 170px;
       cursor: pointer;
+
       .iconCart {
         margin-bottom: 0;
         height: 20px;
