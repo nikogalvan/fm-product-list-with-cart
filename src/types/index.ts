@@ -16,3 +16,14 @@ export interface UseProductResult {
   loading: boolean;
   error: string | null;
 }
+
+export type CartContextType = {
+  cart: ProductCart[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: Product["id"]) => void;
+  decreaseQuantity: (id: Product["id"]) => void;
+};
+
+export interface ProductCart extends Product {
+  quantity: number;
+}
