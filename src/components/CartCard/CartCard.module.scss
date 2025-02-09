@@ -1,0 +1,29 @@
+@use "../../styles/abstracts/variables" as *;
+@use "sass:map";
+
+.container {
+  background-color: white;
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    color: $red;
+    font-size: map.get($font-sizes, "xl");
+  }
+  .emptyCart {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: $rose-400;
+      font-weight: map.get($font-weights, "semibold");
+    }
+  }
+  .cartSelected {
+  }
+}
