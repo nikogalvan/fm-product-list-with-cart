@@ -1,19 +1,21 @@
 import styles from "./Home.module.scss";
-import productData from "../../../data.json";
-import { Product } from "../../types";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import { useProducts } from "../../hooks/useProducts";
+import { CartCard, ProductList } from "../../components/";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext/CartContext";
 
-const Home: React.FC = () => {
-  const products: Product[] = productData;
+const Home = () => {
+  const { products, error, loading } = useProducts("../../../data.json");
+  const { cart } = useContext(CartContext);
+
+  if (loading) return <p>Loading products...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Desserts</h1>
-      <div className={styles.productList}>
-        {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
+      <ProductList products={products} />
+      <CartCard cartItems={cart} />
     </div>
   );
 };
