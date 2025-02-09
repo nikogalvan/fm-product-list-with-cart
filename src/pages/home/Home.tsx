@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 
 const Home = () => {
-  const { products, error, loading } = useProducts("/data.json");
+  const { products, error, loading } = useProducts("./data.json");
   const { cart } = useContext(CartContext);
 
   if (loading) return <p>Loading products...</p>;
