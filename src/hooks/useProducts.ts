@@ -16,7 +16,7 @@ export const useProducts = (url: string): UseProductResult => {
       const data: Product[] = await resp.json();
 
       const productsWithId: Product[] = data.map(
-        (product: Omit<Product, "id">, index: number) => ({
+        (product: Omit<Product, "id">) => ({
           ...product,
           id: crypto.randomUUID(),
         })
