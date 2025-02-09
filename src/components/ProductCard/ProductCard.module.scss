@@ -2,10 +2,10 @@
 @use "sass:map";
 //TODO HACER EL BUTTON EN LA IMAGEN
 /* PRODUCT CARD STYLES */
-.productCard {
+.container {
   border-radius: 0.5rem;
   line-height: 1.5;
-
+  max-width: 360px;
   img {
     width: 100%;
     height: auto;
@@ -14,31 +14,11 @@
   }
   .imageContainer {
     position: relative;
-    margin-bottom: 1rem;
-    //MOVE THE STYLE OF BuTTON TO HIS MODULE
-    .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      position: absolute;
-      left: 50%;
-      bottom: 0px;
-      transform: translateX(-50%);
-      border: 2px solid $rose-300;
-      border-radius: 5rem;
-      font-size: map.get($font-sizes, "xs");
-      font-weight: map.get($font-weights, "semibold");
-      background-color: white;
-      padding: 0.6rem 1.4rem;
-      cursor: pointer;
-
-      .iconCart {
-        margin-bottom: 0;
-        height: 20px;
-        width: auto;
-      }
-    }
+    display: inline-block;
+  }
+  .descriptionContainer {
+    text-align: left;
+    margin-top: 0.6rem;
   }
   .category {
     font-size: map.get($font-sizes, "s");
