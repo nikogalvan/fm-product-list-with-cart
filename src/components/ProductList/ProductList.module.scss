@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  gap: 1.6rem;
+  justify-content: center;
+  grid-template-columns: 1fr;
+
+  grid-template-columns: 1fr; // Mobile: una sola columna
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr); // Desktop: 3 columnas
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); // Opcional: 4 columnas en pantallas grandes
+  }
+}
