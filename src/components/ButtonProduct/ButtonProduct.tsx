@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { Product } from "../../types";
 import styles from "./ButtonProduct.module.scss";
 import { CartContext } from "../../context/CartContext/CartContext";
-import cartSVG from "/assets/images/icon-add-to-cart.svg";
+import { AddToCartButton } from "../AddToCartButton/AddToCartButton";
+import { QuantityControls } from "../QuantityControls/QuantityControls";
 
 interface Props {
   product: Product;
@@ -14,30 +15,24 @@ export const ButtonProduct: React.FC<Props> = ({ product }) => {
   const productInCart = cart.find((item) => item.id === product.id);
   const quantity = productInCart ? productInCart.quantity : 0;
 
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      decreaseQuantity(product.id);
+    } else {
+      removeFromCart(product.id);
+    }
+  };
+
   return (
     <div className={styles.container}>
       {quantity > 0 ? (
-        <div className={styles.quantityControls}>
-          <button
-            onClick={
-              () =>
-                quantity > 1
-                  ? decreaseQuantity(product.id) // Disminuye cantidad
-                  : removeFromCart(product.id) // Elimina el producto si es 1
-            }
-          >
-            -
-          </button>
-          <span>{quantity}</span>
-          <button onClick={() => addToCart(product)}>+</button>
-        </div>
+        <QuantityControls
+          quantity={quantity}
+          onDecrease={handleDecrease}
+          onIncrease={() => addToCart(product)}
+        />
       ) : (
-        <button
-          className={styles.buttonAddCart}
-          onClick={() => addToCart(product)}
-        >
-          <img src={cartSVG} alt="Add to cart" /> Add to Cart
-        </button>
+        <AddToCartButton onClick={() => addToCart(product)} />
       )}
     </div>
   );
