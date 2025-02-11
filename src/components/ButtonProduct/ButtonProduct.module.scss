@@ -2,56 +2,16 @@
 @use "sass:map";
 
 .container {
+  width: 100%;
+  max-width: 150px;
+  height: 32px;
+  min-height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-
   left: 50%;
-  bottom: 0px;
+  bottom: -6px;
   transform: translateX(-50%);
-}
-.buttonAddCart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  text-align: center;
-  width: fit-content;
-  padding: 0.6rem 1.4rem;
-  border: 2px solid $rose-300;
-  border-radius: 5rem;
-  font-size: map.get($font-sizes, "xs");
-  font-weight: map.get($font-weights, "semibold");
-  background-color: white;
-  cursor: pointer;
-  img {
-    height: 20px;
-    margin: 0;
-  }
-}
-.quantityControl {
-  display: flex;
-  align-items: center;
-  background-color: #ff6b6b;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 1.5rem;
-
-  .decrease,
-  .increase {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0 0.5rem;
-  }
-
-  .quantity {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0 0.5rem;
-  }
+  overflow: hidden;
 }
