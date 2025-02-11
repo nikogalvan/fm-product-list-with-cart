@@ -1,0 +1,46 @@
+@use "../../styles/abstracts/variables" as *;
+@use "sass:map";
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: $red;
+  color: white;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  border-radius: 5rem;
+  font-size: map.get($font-sizes, "xs");
+  font-weight: map.get($font-weights, "semibold");
+  height: 32px; 
+
+  .quantityButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px; 
+    border: none;
+    border-radius: 50%;
+    background-color: $red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    img {
+      width: 12px;
+      height: 100%;
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: $rose-300;
+    }
+  }
+
+  .quantityValue {
+    font-size: map.get($font-sizes, "xs");
+    font-weight: bold;
+  }
+}
