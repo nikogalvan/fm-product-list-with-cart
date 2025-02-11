@@ -1,0 +1,33 @@
+@use "../../styles/abstracts/variables" as *;
+@use "sass:map";
+
+.buttonAddCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+  width: 100%;
+  padding: auto 1.4rem;
+
+  border: 2px solid $rose-300;
+  border-radius: 5rem;
+  font-size: map.get($font-sizes, "xs");
+  font-weight: map.get($font-weights, "semibold");
+  background-color: white;
+  color: $rose-400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 32px;
+
+  &:hover {
+    background-color: $rose-300;
+    color: white;
+  }
+
+  img {
+    width: 20px;
+    height: 100%;
+    margin: 0;
+  }
+}
