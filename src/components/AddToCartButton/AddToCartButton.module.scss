@@ -5,19 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 0.5rem;
   width: 100%;
-  padding: auto 1.4rem;
-
+  padding: 0 1.4rem;
   border: 2px solid $rose-300;
   border-radius: 5rem;
   font-size: map.get($font-sizes, "xs");
-  font-weight: map.get($font-weights, "semibold");
+  font-weight: map.get($font-weights, "bold");
   background-color: white;
-  color: $rose-400;
+  color: $rose-900;
   cursor: pointer;
-  transition: all 0.3s ease;
   height: 32px;
 
   &:hover {
