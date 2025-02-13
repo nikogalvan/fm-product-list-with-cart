@@ -1,0 +1,57 @@
+@use "../../styles/abstracts/variables" as *;
+@use "sass:map";
+
+.container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $rose-100;
+
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+
+    .productName {
+      font-size: map.get($font-sizes, "s");
+      font-weight: map.get($font-weights, "semibold");
+    }
+
+    .productDetails {
+      color: $red;
+      display: flex;
+      gap: 0.6rem;
+
+      .quantity {
+        font-weight: map.get($font-weights, "semibold");
+      }
+
+      .priceInfo {
+        color: $rose-400;
+        display: flex;
+        gap: 0.4rem;
+
+        .totalPrice {
+          font-weight: map.get($font-weights, "semibold");
+        }
+      }
+    }
+  }
+
+  .removeButton {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid $red;
+    border-radius: 9999px;
+    color: $red;
+    cursor: pointer;
+
+  }
+}
