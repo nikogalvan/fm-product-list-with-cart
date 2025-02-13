@@ -10,7 +10,9 @@
   h3 {
     color: $red;
     font-size: map.get($font-sizes, "xl");
+    margin-bottom: 0.6rem;
   }
+
   .emptyCart {
     margin-top: 2rem;
     display: flex;
@@ -23,7 +25,5 @@
       color: $rose-400;
       font-weight: map.get($font-weights, "semibold");
     }
-  }
-  .cartSelected {
   }
 }

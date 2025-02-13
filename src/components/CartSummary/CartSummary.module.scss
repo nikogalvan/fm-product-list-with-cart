@@ -1,0 +1,52 @@
+@use "../../styles/abstracts/variables" as *;
+@use "sass:map";
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .orderTotal {
+    margin-block: 1.4rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    .totalAmount {
+      font-size: map.get($font-sizes, "xl");
+      font-weight: map.get($font-weights, "bold");
+    }
+  }
+
+  .carbonNeutralContainer {
+    margin-bottom: 1.2rem;
+    background-color: $rose-100;
+    border-radius: 0.4rem;
+    font-size: map.get($font-sizes, "s");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1rem;
+
+    .highlightedText {
+      font-weight: map.get($font-weights, "semibold");
+    }
+
+    .carbonNeutralIcon {
+      width: 20px;
+      height: auto;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .confirmButton {
+    height: 46px;
+    border: none;
+    border-radius: 5rem;
+    color: $rose-100;
+    background-color: $red;
+    font-weight: map.get($font-weights, "semibold");
+    font-size: map.get($font-sizes, "m");
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+}
