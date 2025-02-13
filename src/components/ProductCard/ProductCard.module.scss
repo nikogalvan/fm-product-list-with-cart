@@ -1,7 +1,6 @@
 @use "../../styles/abstracts/" as *;
 @use "sass:map";
-//TODO HACER EL BUTTON EN LA IMAGEN
-/* PRODUCT CARD STYLES */
+
 .container {
   border-radius: 0.5rem;
   line-height: 1.5;
@@ -15,6 +14,9 @@
   .imageContainer {
     position: relative;
     display: inline-block;
+    .productSelected {
+      outline: $red 1px solid;
+    }
   }
   .descriptionContainer {
     text-align: left;
