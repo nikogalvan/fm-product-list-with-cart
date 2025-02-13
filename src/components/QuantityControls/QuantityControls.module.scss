@@ -14,23 +14,21 @@
   border-radius: 5rem;
   font-size: map.get($font-sizes, "xs");
   font-weight: map.get($font-weights, "semibold");
-  height: 32px; 
+  height: 32px;
 
   .quantityButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    height: 32px; 
-    border: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid white;
     border-radius: 50%;
     background-color: $red;
     cursor: pointer;
-    transition: all 0.3s ease;
 
     img {
-      width: 12px;
-      height: 100%;
+      width: 10px;
       margin: 0;
     }
 
