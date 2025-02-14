@@ -4,9 +4,10 @@ import { CartContextType, Product, ProductCart } from "../../types";
 // Crear el contexto con un valor inicial
 const defaultCartContext: CartContextType = {
   cart: [],
-  addToCart: () => {},
-  removeFromCart: () => {},
-  decreaseQuantity: () => {},
+  addToCart: () => { },
+  removeFromCart: () => { },
+  decreaseQuantity: () => { },
+  clearCart: () => { }
 };
 
 export const CartContext = createContext<CartContextType>(defaultCartContext);
@@ -47,10 +48,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
       )
     );
   };
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, decreaseQuantity }}
+      value={{ cart, addToCart, removeFromCart, decreaseQuantity, clearCart }}
     >
       {children}
     </CartContext.Provider>
