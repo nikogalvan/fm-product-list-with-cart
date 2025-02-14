@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const CartCard: React.FC<Props> = ({ cartItems }) => {
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart, clearCart } = useContext(CartContext);
 
   const calculateTotal = useMemo(() => {
     return cartItems.reduce(
@@ -33,6 +33,7 @@ export const CartCard: React.FC<Props> = ({ cartItems }) => {
           cartItems={cartItems}
           calculateTotal={calculateTotal}
           onRemove={removeFromCart}
+          onClearCart={clearCart}
         />
       )}
     </div>
