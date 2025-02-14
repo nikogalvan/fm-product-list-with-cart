@@ -2,10 +2,24 @@
 @use "sass:map";
 
 .container {
+  width: 100%;
   background-color: white;
   padding: 1.8rem 1.4rem;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    place-self: center;
+    width: 370px;
+    grid-column: 1;
+  }
+
+  @media (min-width: 1024px) {
+
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: flex-start;
+  }
 
   h3 {
     color: $red;
