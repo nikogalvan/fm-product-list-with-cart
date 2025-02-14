@@ -2,56 +2,88 @@
 @use "sass:map";
 
 .container {
-  margin-top: 1rem;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $rose-100;
+  gap: 1rem;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $rose-300;
+    padding-bottom: 1rem;
+  }
+
+  .productImage {
+    object-fit: cover;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 0.2rem;
+  }
 
   .productInfo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.4rem;
+    flex: 1;
+    min-width: 0;
 
     .productName {
-      font-size: map.get($font-sizes, "s");
       font-weight: map.get($font-weights, "semibold");
-    }
-
-    .productDetails {
-      color: $red;
-      display: flex;
-      gap: 0.6rem;
-
-      .quantity {
-        font-weight: map.get($font-weights, "semibold");
-      }
-
-      .priceInfo {
-        color: $rose-400;
-        display: flex;
-        gap: 0.4rem;
-
-        .totalPrice {
-          font-weight: map.get($font-weights, "semibold");
-        }
-      }
+      font-size: map.get($font-sizes, "m");
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
-  .removeButton {
-    height: 20px;
-    width: 20px;
+  .productDetails {
     display: flex;
-    justify-content: center;
+    gap: 0.6rem;
     align-items: center;
+
+    .quantity {
+      font-weight: map.get($font-weights, "semibold");
+      color: $red;
+    }
+
+    .unitPrice,
+    .totalPrice {
+      color: $rose-500;
+      font-weight: map.get($font-weights, "regular");
+    }
+
+    .totalPrice {
+      flex: 1;
+      text-align: left;
+      color: $rose-900;
+      font-weight: map.get($font-weights, "semibold");
+    }
+
+  }
+
+  .removeButton {
+    width: 20px;
+    height: 20px;
     background: none;
     border: 1px solid $red;
-    border-radius: 9999px;
+    border-radius: 50%;
     color: $red;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+  }
+
+  &:not(:has(.removeButton)) .productName {
+
+    max-width: 150px;
+
+  }
+
+  &:not(:has(.removeButton)) .totalPrice {
+    color: $rose-900;
+    font-weight: map.get($font-weights, "semibold");
   }
 }
