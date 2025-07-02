@@ -4,6 +4,7 @@ import { CartCard, ProductList } from "../../components/";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 
+//TODO:Consumir API para obtener los datos, en lugar de manternlos estaticos
 const Home = () => {
   const { products, error, loading } = useProducts("./data.json");
   const { cart } = useContext(CartContext);
