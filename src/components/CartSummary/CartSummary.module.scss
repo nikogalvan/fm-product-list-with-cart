@@ -48,6 +48,11 @@
     font-weight: map.get($font-weights, "semibold");
     font-size: map.get($font-sizes, "m");
     cursor: pointer;
+
+    &:hover {
+      color: $rose-400;
+
+    }
   }
 }
 
@@ -68,8 +73,8 @@
   }
 
   .productList {
-    flex-grow: 1; 
-    overflow-y: auto;  
+    flex-grow: 1;
+    overflow-y: auto;
     max-height: 270px;
     display: flex;
     flex-direction: column;
@@ -78,9 +83,9 @@
     margin-bottom: 1rem;
 
     .orderTotal {
-      position: sticky; 
-      bottom: 0; 
-      background-color: white; 
+      position: sticky;
+      bottom: 0;
+      background-color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
