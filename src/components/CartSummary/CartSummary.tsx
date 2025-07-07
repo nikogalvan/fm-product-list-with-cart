@@ -60,7 +60,7 @@ export const CartSummary: React.FC<Props> = ({
         <Modal onClose={handleCloseModal}>
           <div className={styles.confirmModal}>
             <h2 className={styles.title}>Order Confirmed</h2>
-            <p className={styles.description}>We hope your enojoy your food!</p>
+            <p className={styles.description}>We hope you enjoy your food!</p>
             <div className={styles.productList}>
               {cartItems.map((product) => (
                 <CartDetail
