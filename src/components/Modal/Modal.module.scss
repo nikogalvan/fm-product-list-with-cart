@@ -49,4 +49,7 @@
   border-radius: 1rem;
   font-size: 1.1rem;
   cursor: pointer;
+  &:hover{
+    color: $rose-100;
+  }
 }
